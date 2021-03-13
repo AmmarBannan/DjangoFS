@@ -1,0 +1,109 @@
+call py3Env\Scripts\activate                    
+call djangoPy3Env\Scripts\activate  
+
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+
+django-admin startproject your_project_name_here
+python manage.py startapp your_app_name_here
+
+python manage.py shell
+from your_app_name_here.models import *    /// tables
+
+***
+(djangoPy3Env) pip install bcrypt
+
+$ pip install bcrypt
+
+
+> import bcrypt
+hash1 = bcrypt.hashpw('test'.encode(), bcrypt.gensalt()).decode()
+print(hash1
+
+>>> bcrypt.checkpw('test'.encode(), hash1.encode())
+True
+
+
+
+
+git remote add origin https://github.com/AmmarBannan/RateMe.git
+git clone https://github.com/AmmarBannan/RateMe.git
+3.14.69.249
+gunicorn rate_me_project.wsgi
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/RateMe
+ExecStart=/home/ubuntu/RateMe/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/RateMe/rate_me_project.sock rate_me_project.wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+sudo vim /etc/nginx/sites-available/rate_me_project
+
+
+
+
+from flask import Flask, render_template
+app = Flask(__name__)
+# our index route will handle rendering our form
+@app.route('/')
+def index():
+    return render_template("index.html")
+if __name__ == "__main__":
+    app.run(debug=True)
+
+....................
+MySQL:
+
+NOW()
+NOW() ON UPDATE NOW()
+...................
+> cd python_stack/django/django_intro
+django_intro> django-admin startproject your_project_name_here
+
+django_intro> cd your_project_name_here
+your_project_name_here> python manage.py runserver
+
+your_project_name_here> 
+...................
+in setting.py
+
+   INSTALLED_APPS = [
+       'your_app_name_here', # added this line. Don't forget the comma!!
+       'django.contrib.admin',
+       'django.contrib.auth',
+       'django.contrib.contenttypes',
+       'django.contrib.sessions',
+       'django.contrib.messages',
+       'django.contrib.staticfiles',
+   ]    # the trailing comma after the last item in a list, tuple, or dictionary is commonly accepted in Python
+................
+in url.py
+
+from django.urls import path, include           # import include
+# from django.contrib import admin              # comment out, or just delete
+urlpatterns = [
+    path('', include('your_app_name_here.urls')),	   
+    # path('admin/', admin.sites.urls)         # comment out, or just delete
+]
+
+from django.urls import path     
+from . import views
+urlpatterns = [
+    path('', views.index),	   
+]
+............
+from django.shortcuts import render, HttpResponse
+def index(request):
+    return HttpResponse("this is the equivalent of @app.route('/')!")
+.............................
+python manage.py runserver
+................................
+python manage.py migrate
+python manage.py makemigrations
