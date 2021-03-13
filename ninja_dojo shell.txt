@@ -1,0 +1,43 @@
+from user.models import Dojo,Ninja
+
+first_dojo=Dojo.objects.create(name='acoa',city='uk',state='closed')
+Dojo.objects.create(name='zaros',city='cuba',state='Unknown')
+Dojo.objects.create(name='acadmic',city='ps',state='opened')
+
+c=Dojo.objects.all()
+c.delete()
+
+first_ninja=Ninja.objects.create(first_name='jake',last_name='black',dojo=Dojo.objects.get(name='acoa'))
+Ninja.objects.create(first_name='soo',last_name='bad',dojo=Dojo.objects.get(name='acoa'))
+>>> Ninja.objects.create(first_name='black',last_name='smith',dojo=Dojo.objects.get(name='acoa'))
+
+
+
+>>> Ninja.objects.create(first_name='red',last_name='ruby',dojo=Dojo.objects.get(id='5'))
+<Ninja: Ninja object (4)>
+>>> Ninja.objects.create(first_name='white',last_name='diamond',dojo=Dojo.objects.get(id='5'))
+<Ninja: Ninja object (5)>
+>>> Ninja.objects.create(first_name='green',last_name='emrald',dojo=Dojo.objects.get(id='5'))
+<Ninja: Ninja object (6)>
+
+
+>>> Ninja.objects.create(first_name='one',last_name='one',dojo=Dojo.objects.get(id='6'))
+<Ninja: Ninja object (7)>
+>>> Ninja.objects.create(first_name='two',last_name='two',dojo=Dojo.objects.get(id='6'))
+<Ninja: Ninja object (8)>
+>>> Ninja.objects.create(first_name='three',last_name='three',dojo=Dojo.objects.get(id='6'))
+<Ninja: Ninja object (9)>
+
+
+>>> for nin in ninjain6:
+...     print(nin.first_name)
+...
+one
+two
+three
+>>>
+
+
+Dojo.objects.create(name='zamarock',city='overseas',state='open',desc='new_dojo')
+
+
